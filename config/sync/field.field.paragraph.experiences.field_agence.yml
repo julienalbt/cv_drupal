@@ -1,0 +1,19 @@
+uuid: 5edf50e4-4baf-4942-974c-690a23217491
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_agence
+    - paragraphs.paragraphs_type.experiences
+id: paragraph.experiences.field_agence
+field_name: field_agence
+entity_type: paragraph
+bundle: experiences
+label: Agence
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

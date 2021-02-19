@@ -1,0 +1,19 @@
+uuid: c7c791ab-ff0b-45bc-84ef-013d61a0685b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre
+    - paragraphs.paragraphs_type.portfolio
+id: paragraph.portfolio.field_titre
+field_name: field_titre
+entity_type: paragraph
+bundle: portfolio
+label: Titre
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

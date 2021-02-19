@@ -1,0 +1,21 @@
+uuid: b779906e-1e98-4d31-8486-af3cd6b75d79
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_texte
+    - paragraphs.paragraphs_type.portfolio
+  module:
+    - text
+id: paragraph.portfolio.field_texte
+field_name: field_texte
+entity_type: paragraph
+bundle: portfolio
+label: 'Description longue'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

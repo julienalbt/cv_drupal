@@ -1,0 +1,27 @@
+uuid: b7ca21d6-9828-4dc3-81be-7f11e0126859
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_certificat_de_travail
+    - paragraphs.paragraphs_type.experiences
+  module:
+    - file
+id: paragraph.experiences.field_certificat_de_travail
+field_name: field_certificat_de_travail
+entity_type: paragraph
+bundle: experiences
+label: 'Certificat de travail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: '2 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

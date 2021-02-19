@@ -1,0 +1,21 @@
+uuid: 1170abbf-5aea-455f-9d26-9f8c62f4ad24
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poste
+    - node.type.cv
+id: node.cv.field_poste
+field_name: field_poste
+entity_type: node
+bundle: cv
+label: Poste
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Développeur Backend / Drupal'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 6cf20d31-e01e-41d9-928d-2c72a146760d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lieu
+    - paragraphs.paragraphs_type.formation
+id: paragraph.formation.field_lieu
+field_name: field_lieu
+entity_type: paragraph
+bundle: formation
+label: Lieu
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

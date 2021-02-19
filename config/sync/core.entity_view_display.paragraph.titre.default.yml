@@ -1,0 +1,21 @@
+uuid: 84813eb4-f803-4ab4-890f-fab7568a2b72
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.titre.field_titre
+    - paragraphs.paragraphs_type.titre
+id: paragraph.titre.default
+targetEntityType: paragraph
+bundle: titre
+mode: default
+content:
+  field_titre:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

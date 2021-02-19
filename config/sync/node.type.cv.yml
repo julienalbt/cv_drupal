@@ -1,0 +1,17 @@
+uuid: e5f838dd-7b1b-4966-9a7c-4223a73e7b88
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: CV
+type: cv
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

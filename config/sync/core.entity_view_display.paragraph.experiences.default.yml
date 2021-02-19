@@ -1,0 +1,77 @@
+uuid: 0b8f3c2d-513d-4246-bc0d-8e15c8729bb9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.experiences.field_agence
+    - field.field.paragraph.experiences.field_certificat_de_travail
+    - field.field.paragraph.experiences.field_date
+    - field.field.paragraph.experiences.field_lieu
+    - field.field.paragraph.experiences.field_liste_de_taches
+    - field.field.paragraph.experiences.field_poste_occupe
+    - field.field.paragraph.experiences.field_recommandation
+    - paragraphs.paragraphs_type.experiences
+  module:
+    - file
+    - text
+id: paragraph.experiences.default
+targetEntityType: paragraph
+bundle: experiences
+mode: default
+content:
+  field_agence:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_certificat_de_travail:
+    weight: 6
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_date:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lieu:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_liste_de_taches:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_poste_occupe:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_recommandation:
+    weight: 5
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

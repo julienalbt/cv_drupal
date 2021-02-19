@@ -1,0 +1,140 @@
+uuid: 12c8dc93-8514-4750-a0f2-d42a6e6a560d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.cv.field_competences
+    - field.field.node.cv.field_cv_pdf
+    - field.field.node.cv.field_experiences
+    - field.field.node.cv.field_formations
+    - field.field.node.cv.field_nom
+    - field.field.node.cv.field_permis
+    - field.field.node.cv.field_photo_de_profil
+    - field.field.node.cv.field_portfolio
+    - field.field.node.cv.field_poste
+    - field.field.node.cv.field_resume
+    - field.field.node.cv.field_social
+    - field.field.node.cv.field_ville
+    - image.style.medium
+    - node.type.cv
+  module:
+    - entity_reference_revisions
+    - file
+    - media
+    - social_link_field
+    - user
+id: node.cv.default
+targetEntityType: node
+bundle: cv
+mode: default
+content:
+  field_competences:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_cv_pdf:
+    weight: 7
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_experiences:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_formations:
+    type: entity_reference_revisions_entity_view
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nom:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_permis:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_photo_de_profil:
+    type: media_thumbnail
+    weight: 1
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_portfolio:
+    type: entity_reference_revisions_entity_view
+    weight: 13
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_poste:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_resume:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_social:
+    weight: 6
+    label: hidden
+    settings:
+      orientation: vertical
+      new_tab: true
+    third_party_settings: {  }
+    type: network_name
+    region: content
+  field_ville:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

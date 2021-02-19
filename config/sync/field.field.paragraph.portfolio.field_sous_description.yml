@@ -1,0 +1,19 @@
+uuid: 46989800-96c0-487b-bd67-dbf8a2c0b381
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sous_description
+    - paragraphs.paragraphs_type.portfolio
+id: paragraph.portfolio.field_sous_description
+field_name: field_sous_description
+entity_type: paragraph
+bundle: portfolio
+label: 'Sous description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

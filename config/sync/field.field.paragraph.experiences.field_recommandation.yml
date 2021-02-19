@@ -1,0 +1,27 @@
+uuid: 5151c821-e3cf-412b-8cda-30e4ab651286
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recommandation
+    - paragraphs.paragraphs_type.experiences
+  module:
+    - file
+id: paragraph.experiences.field_recommandation
+field_name: field_recommandation
+entity_type: paragraph
+bundle: experiences
+label: Recommandation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: '2 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

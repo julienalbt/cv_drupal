@@ -1,0 +1,50 @@
+uuid: 1e5dbb6a-6ad5-4a84-9083-a0e90c71211c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.formation.field_date
+    - field.field.paragraph.formation.field_intitule_formation
+    - field.field.paragraph.formation.field_lieu
+    - field.field.paragraph.formation.field_structure
+    - paragraphs.paragraphs_type.formation
+id: paragraph.formation.default
+targetEntityType: paragraph
+bundle: formation
+mode: default
+content:
+  field_date:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_intitule_formation:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lieu:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_structure:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: 24e2c7d0-7b2f-499e-bfd3-1e018ca19700
+langcode: fr
+status: true
+dependencies: {  }
+id: experiences
+label: Expériences
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,39 @@
+uuid: 8f42a749-cac9-4bdb-aad4-8faf15ae0ff3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resume
+    - node.type.cv
+    - paragraphs.paragraphs_type.texte
+    - paragraphs.paragraphs_type.titre
+  module:
+    - entity_reference_revisions
+id: node.cv.field_resume
+field_name: field_resume
+entity_type: node
+bundle: cv
+label: Resume
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      titre: titre
+      texte: texte
+    target_bundles_drag_drop:
+      experiences:
+        weight: -5
+        enabled: false
+      texte:
+        enabled: true
+        weight: -6
+      titre:
+        enabled: true
+        weight: -7
+field_type: entity_reference_revisions

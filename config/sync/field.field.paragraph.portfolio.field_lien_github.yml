@@ -1,0 +1,23 @@
+uuid: 9b00d2c0-548b-4533-92c9-6694572cedf1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lien_github
+    - paragraphs.paragraphs_type.portfolio
+  module:
+    - link
+id: paragraph.portfolio.field_lien_github
+field_name: field_lien_github
+entity_type: paragraph
+bundle: portfolio
+label: 'Lien github'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

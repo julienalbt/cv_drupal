@@ -1,0 +1,75 @@
+uuid: af2a83a2-1d15-49aa-b10b-6bbcaf7680c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.portfolio.field_description
+    - field.field.paragraph.portfolio.field_lien_github
+    - field.field.paragraph.portfolio.field_screenshot
+    - field.field.paragraph.portfolio.field_sous_description
+    - field.field.paragraph.portfolio.field_texte
+    - field.field.paragraph.portfolio.field_titre
+    - image.style.large
+    - paragraphs.paragraphs_type.portfolio
+  module:
+    - link
+    - media
+    - text
+id: paragraph.portfolio.default
+targetEntityType: paragraph
+bundle: portfolio
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lien_github:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_screenshot:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_sous_description:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_texte:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_titre:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,5 +1,5 @@
-uuid: b7ca2f7f-14e2-4ab2-a925-6c45796cfa85
-langcode: en
+uuid: 59466bed-9bcd-4f5e-a4d0-b62f1efdf082
+langcode: fr
 status: true
 dependencies:
   module:
@@ -11,7 +11,7 @@ _core:
 id: cv_theme_content
 theme: cv_theme
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: system_main_block
 settings:

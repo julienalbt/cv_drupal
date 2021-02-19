@@ -1,0 +1,39 @@
+uuid: f6773f01-45b3-4118-90b2-446c3a795b38
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competences
+    - node.type.cv
+    - paragraphs.paragraphs_type.texte
+    - paragraphs.paragraphs_type.titre
+  module:
+    - entity_reference_revisions
+id: node.cv.field_competences
+field_name: field_competences
+entity_type: node
+bundle: cv
+label: Compétences
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      texte: texte
+      titre: titre
+    target_bundles_drag_drop:
+      experiences:
+        weight: 4
+        enabled: false
+      texte:
+        enabled: true
+        weight: 5
+      titre:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

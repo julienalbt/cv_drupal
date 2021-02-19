@@ -1,0 +1,21 @@
+uuid: 412a0ab0-8bf4-4d3c-a418-a281e3980a9e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_permis
+    - node.type.cv
+id: node.cv.field_permis
+field_name: field_permis
+entity_type: node
+bundle: cv
+label: Permis
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Permis de travail G'
+default_value_callback: ''
+settings: {  }
+field_type: string

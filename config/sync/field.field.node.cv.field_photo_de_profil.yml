@@ -1,0 +1,33 @@
+uuid: 22bfa741-99e4-4868-ada1-e5f646fab882
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_de_profil
+    - media.type.image
+    - node.type.cv
+  content:
+    - 'media:image:a8a22959-e142-4f25-a043-57e7e13754ca'
+id: node.cv.field_photo_de_profil
+field_name: field_photo_de_profil
+entity_type: node
+bundle: cv
+label: 'Photo de profil'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: a8a22959-e142-4f25-a043-57e7e13754ca
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

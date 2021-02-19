@@ -1,5 +1,5 @@
-uuid: 3712f424-e23a-4c75-8f2b-76c4f3f9a784
-langcode: en
+uuid: c7cc065d-c299-4361-9eca-f905d19eadd7
+langcode: fr
 status: true
 dependencies:
   theme:
@@ -8,8 +8,8 @@ _core:
   default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
 id: cv_theme_primary_local_tasks
 theme: cv_theme
-region: header
-weight: 0
+region: content
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

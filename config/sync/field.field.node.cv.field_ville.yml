@@ -1,0 +1,21 @@
+uuid: 9f825248-6deb-47ed-9bd3-92cb7c9289b9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ville
+    - node.type.cv
+id: node.cv.field_ville
+field_name: field_ville
+entity_type: node
+bundle: cv
+label: Ville
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Annecy
+default_value_callback: ''
+settings: {  }
+field_type: string

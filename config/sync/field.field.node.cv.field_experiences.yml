@@ -1,0 +1,45 @@
+uuid: 2f9820d7-bde4-45b5-b586-d04e8cad75ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experiences
+    - node.type.cv
+    - paragraphs.paragraphs_type.experiences
+    - paragraphs.paragraphs_type.titre
+  module:
+    - entity_reference_revisions
+id: node.cv.field_experiences
+field_name: field_experiences
+entity_type: node
+bundle: cv
+label: Expériences
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      experiences: experiences
+      titre: titre
+    target_bundles_drag_drop:
+      experiences:
+        enabled: true
+        weight: -11
+      formation:
+        weight: -8
+        enabled: false
+      portfolio:
+        weight: -7
+        enabled: false
+      texte:
+        weight: -9
+        enabled: false
+      titre:
+        enabled: true
+        weight: -10
+field_type: entity_reference_revisions

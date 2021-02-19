@@ -1,0 +1,48 @@
+uuid: 62363320-8be3-40fc-b19a-90494ad6898a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.formation.field_date
+    - field.field.paragraph.formation.field_intitule_formation
+    - field.field.paragraph.formation.field_lieu
+    - field.field.paragraph.formation.field_structure
+    - paragraphs.paragraphs_type.formation
+id: paragraph.formation.default
+targetEntityType: paragraph
+bundle: formation
+mode: default
+content:
+  field_date:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_intitule_formation:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lieu:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_structure:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

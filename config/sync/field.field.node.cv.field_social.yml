@@ -1,0 +1,30 @@
+uuid: fea4d1e4-8d6d-4ff1-8055-2a20c006fb26
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social
+    - node.type.cv
+  module:
+    - social_link_field
+id: node.cv.field_social
+field_name: field_social
+entity_type: node
+bundle: cv
+label: Social
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    link: alombertjulien@gmail.com
+    social: email
+  -
+    link: in/julien-alombert
+    social: linkedin
+  -
+    link: julienalbt
+    social: github
+default_value_callback: ''
+settings: {  }
+field_type: social_links

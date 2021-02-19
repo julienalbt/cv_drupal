@@ -1,0 +1,21 @@
+uuid: 9102329a-cc88-4bbf-8e0d-fd5bf7e47b8b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nom
+    - node.type.cv
+id: node.cv.field_nom
+field_name: field_nom
+entity_type: node
+bundle: cv
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Julien Alombert'
+default_value_callback: ''
+settings: {  }
+field_type: string

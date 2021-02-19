@@ -1,0 +1,21 @@
+uuid: b45c6ad2-8432-4eb6-93dd-983c00f21fba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_liste_de_taches
+    - paragraphs.paragraphs_type.experiences
+  module:
+    - text
+id: paragraph.experiences.field_liste_de_taches
+field_name: field_liste_de_taches
+entity_type: paragraph
+bundle: experiences
+label: 'Liste de tâches'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,78 @@
+uuid: e2b9425f-8fc3-47b4-b0a4-df7bd6d69cf2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.experiences.field_agence
+    - field.field.paragraph.experiences.field_certificat_de_travail
+    - field.field.paragraph.experiences.field_date
+    - field.field.paragraph.experiences.field_lieu
+    - field.field.paragraph.experiences.field_liste_de_taches
+    - field.field.paragraph.experiences.field_poste_occupe
+    - field.field.paragraph.experiences.field_recommandation
+    - paragraphs.paragraphs_type.experiences
+  module:
+    - file
+    - text
+id: paragraph.experiences.default
+targetEntityType: paragraph
+bundle: experiences
+mode: default
+content:
+  field_agence:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_certificat_de_travail:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_date:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lieu:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_liste_de_taches:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_poste_occupe:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recommandation:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  created: true
+  status: true

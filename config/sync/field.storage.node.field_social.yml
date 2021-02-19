@@ -1,0 +1,19 @@
+uuid: 8c967552-da64-4f8e-9af2-0c8a56e5a9ed
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - social_link_field
+id: node.field_social
+field_name: field_social
+entity_type: node
+type: social_links
+settings: {  }
+module: social_link_field
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

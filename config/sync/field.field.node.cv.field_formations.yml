@@ -1,0 +1,42 @@
+uuid: 509f23ae-0901-4ba0-8626-3ec138e249b3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formations
+    - node.type.cv
+    - paragraphs.paragraphs_type.formation
+    - paragraphs.paragraphs_type.titre
+  module:
+    - entity_reference_revisions
+id: node.cv.field_formations
+field_name: field_formations
+entity_type: node
+bundle: cv
+label: Formations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      formation: formation
+      titre: titre
+    target_bundles_drag_drop:
+      experiences:
+        weight: 6
+        enabled: false
+      formation:
+        enabled: true
+        weight: 5
+      texte:
+        weight: 7
+        enabled: false
+      titre:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

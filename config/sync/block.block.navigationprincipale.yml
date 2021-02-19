@@ -1,0 +1,25 @@
+uuid: 83c9f951-ff4a-49bf-9dde-8ca9b344ae3a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - cv_theme
+id: navigationprincipale
+theme: cv_theme
+region: primary_menu
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

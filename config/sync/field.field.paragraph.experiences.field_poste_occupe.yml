@@ -1,0 +1,19 @@
+uuid: f5c37d29-8131-48be-992a-1159d87d5293
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poste_occupe
+    - paragraphs.paragraphs_type.experiences
+id: paragraph.experiences.field_poste_occupe
+field_name: field_poste_occupe
+entity_type: paragraph
+bundle: experiences
+label: 'Poste occupé'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

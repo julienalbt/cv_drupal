@@ -1,0 +1,20 @@
+uuid: 939f845c-5aca-4858-a081-c39ef1e9c86d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_screenshot
+field_name: field_screenshot
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

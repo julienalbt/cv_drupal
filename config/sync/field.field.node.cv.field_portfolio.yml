@@ -1,0 +1,45 @@
+uuid: 7f3084a7-1710-40a3-82fc-253abd89b8ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portfolio
+    - node.type.cv
+    - paragraphs.paragraphs_type.portfolio
+    - paragraphs.paragraphs_type.titre
+  module:
+    - entity_reference_revisions
+id: node.cv.field_portfolio
+field_name: field_portfolio
+entity_type: node
+bundle: cv
+label: Portfolio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      portfolio: portfolio
+      titre: titre
+    target_bundles_drag_drop:
+      experiences:
+        weight: 7
+        enabled: false
+      formation:
+        weight: 8
+        enabled: false
+      portfolio:
+        enabled: true
+        weight: 6
+      texte:
+        weight: 9
+        enabled: false
+      titre:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

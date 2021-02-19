@@ -1,0 +1,19 @@
+uuid: dbeeafb7-93fb-4c46-9e6c-9026618d9c74
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intitule_formation
+    - paragraphs.paragraphs_type.formation
+id: paragraph.formation.field_intitule_formation
+field_name: field_intitule_formation
+entity_type: paragraph
+bundle: formation
+label: 'Intitulé formation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

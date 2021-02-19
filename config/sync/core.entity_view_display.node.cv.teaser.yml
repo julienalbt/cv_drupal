@@ -1,0 +1,45 @@
+uuid: c42ee680-18e5-4851-9aa0-a499389850a0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cv.field_competences
+    - field.field.node.cv.field_cv_pdf
+    - field.field.node.cv.field_experiences
+    - field.field.node.cv.field_formations
+    - field.field.node.cv.field_nom
+    - field.field.node.cv.field_permis
+    - field.field.node.cv.field_photo_de_profil
+    - field.field.node.cv.field_portfolio
+    - field.field.node.cv.field_poste
+    - field.field.node.cv.field_resume
+    - field.field.node.cv.field_social
+    - field.field.node.cv.field_ville
+    - node.type.cv
+  module:
+    - user
+id: node.cv.teaser
+targetEntityType: node
+bundle: cv
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_competences: true
+  field_cv_pdf: true
+  field_experiences: true
+  field_formations: true
+  field_nom: true
+  field_permis: true
+  field_photo_de_profil: true
+  field_portfolio: true
+  field_poste: true
+  field_resume: true
+  field_social: true
+  field_ville: true
+  langcode: true

@@ -1,0 +1,19 @@
+uuid: d3f06da6-b7bb-4ae5-be9b-c38df91cd92c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_liste_de_taches
+field_name: field_liste_de_taches
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

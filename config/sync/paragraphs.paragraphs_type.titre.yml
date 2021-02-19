@@ -1,0 +1,10 @@
+uuid: f59e9582-2b72-497d-85e3-cbf4a366fe86
+langcode: fr
+status: true
+dependencies: {  }
+id: titre
+label: Titre
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

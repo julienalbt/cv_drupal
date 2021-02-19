@@ -1,0 +1,23 @@
+uuid: cccbdba7-cb6b-423d-abdd-729445d2fe56
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.titre.field_titre
+    - paragraphs.paragraphs_type.titre
+id: paragraph.titre.default
+targetEntityType: paragraph
+bundle: titre
+mode: default
+content:
+  field_titre:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
