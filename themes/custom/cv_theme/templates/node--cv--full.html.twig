@@ -1,0 +1,305 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{{ attach_library('bootstrap_barrio/node') }}
+
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'clearfix',
+] %}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        {% block submitted %}
+          <em{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </em>
+        {% endblock %}
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+    <section id="header" class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          {{ content.field_photo_de_profil }}
+          <p class="lead display-5">{{ content.field_nom.0 }}</p>
+          <h2 class="fw-light my-3">{{ content.field_poste.0 }}</h2>
+          <p class="lead">
+            <i class="fas fa-map-marker-alt mr-1 ico"></i>{{ content.field_ville.0 }}
+            <br>
+            <i class="fas fa-address-card mr-1 ico"></i>{{ content.field_permis.0 }}
+          </p>
+          <div class="my-5">
+            <a class="btn-social mx-2" href="{{ mail_link }}"><i class="fas fa-envelope fa-2x"></i></a>
+            <a class="btn-social mx-2" href="{{ linkedin_link }}"><i class="fab fa-linkedin-in fa-2x"></i></a>
+            <a class="btn-social mx-2" href="{{ github_link }}"><i class="fab fa-github fa-2x"></i></a>
+          </div>
+          <div class="btn-pdf">
+            <a class="d-flex flex-column align-items-center btn btn-lg" href="{{ pdf_url }}">
+              <i class="fas fa-file-pdf fa-3x"></i>
+              {{ 'Télécharger le CV'|t }}
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="px-5 px-md-5 py-5 text-center">
+        {{ content.field_resume }}
+      </div>
+    </section>
+
+    <section id="exp">
+      <div class="px-3 px-md-5 py-5 text-center">
+        <div class="field--name-field-titre">
+          {{ exps_title.field_titre.value }}
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+          {% for item in exps %}
+            {% if loop.first == false %}
+              <i class="fas fa-long-arrow-alt-up icon-color my-3"></i>
+            {% endif %}
+            <div class="card bg-card w-75">
+              <div class="card-body card-body-custom">
+
+                <small class="mb-2 text-white font-weight-light">{{ item.field_date.value }}</small>
+                <h5 class="card-title mb-1">{{ item.field_poste_occupe.value }}</h5>
+                <small class="text-white">{{ item.field_agence.value }} - {{ item.field_lieu.value }}</small>
+                <br>
+                <button class="btn-plus-info btn mt-4" type="button" data-toggle="collapse"
+                        data-target="#{{ item.field_agence.value }}" aria-expanded="false"
+                        aria-controls="{{ item.field_agence.value }}">
+                  Plus d'info
+                </button>
+              </div>
+              <div class="collapse" id="{{ item.field_agence.value }}">
+                <div class="card-body">
+                  {{ item.field_liste_de_taches.value|raw }}
+                </div>
+                {% if item.field_certificat_de_travail.entity.uri.value or item.field_recommandation.entity.uri.value %}
+                  <div class="card-footer d-flex flex-wrap justify-content-around">
+                    {% if item.field_certificat_de_travail.entity.uri.value %}
+                      <a class="btn btn-certif my-2"
+                         href="{{ file_url(item.field_certificat_de_travail.entity.uri.value) }}">
+                        {{ 'Certificat de travail'|t }}
+                      </a>
+                    {% endif %}
+                    {% if item.field_recommandation.entity.uri.value %}
+                      <a class="btn btn-certif my-2" href="{{ file_url(item.field_recommandation.entity.uri.value) }}">
+                        {{ 'Lettre de recommandation'|t }}
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="comp">
+      <div class="px-3 px-md-5 py-5 text-center">
+        <div class="field--name-field-titre">
+          {{ comps_title.field_titre.value }}
+        </div>
+
+        <div class="d-flex flex-column flex-lg-row align-items-center">
+          {% for item in comps %}
+            <div class="card bg-card w-75 mx-2 mb-4">
+              <div class="card-body">
+                {% if loop.first %}
+                  <i class="fas fa-cogs fa-2x icon-color"></i>
+                {% elseif loop.last %}
+                  <i class="fas fa-plus fa-2x icon-color"></i>
+                {% else %}
+                  <i class="fas fa-desktop fa-2x icon-color"></i>
+                {% endif %}
+
+                {{ item.field_texte.value|raw }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="px-3 px-md-5 py-5 text-center">
+        <div class="field--name-field-titre">
+          {{ forms_title.field_titre.value }}
+        </div>
+
+        <div class="d-flex flex-column flex-lg-row-reverse align-items-center">
+          {% for item in forms %}
+            {% if loop.first == false %}
+              <i class="fas fa-long-arrow-alt-up icon-color d-lg-none my-3"></i>
+              <i class="fas fa-long-arrow-alt-right icon-color d-none d-lg-block mx-3"></i>
+            {% endif %}
+
+            <div class="card bg-card w-75">
+              <div class="card-body">
+                <small>{{ item.field_date.value }}</small>
+                <h5 class="card-title my-3"><b>{{ item.field_intitule_formation.value }}</b></h5>
+                <small>{{ item.field_structure.value }} - {{ item.field_lieu.value }}</small>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="w-100" id="port">
+      <div class="px-3 px-md-5 py-5 text-center">
+        <div class="field--name-field-titre">
+          {{ ports_title.field_titre.value }}
+        </div>
+
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="20000">
+
+          <div class="carousel-inner">
+
+            {% for item in ports %}
+
+              <div class="carousel-item {% if loop.first %}active{% endif %}">
+
+                <div class="container">
+                  <div class="carousel-caption text-center">
+                    <div class="card-body my-5">
+                      <img src="{{ file_url(item.field_screenshot.entity.field_media_image.entity.fileuri) }}"
+                           class="col-12 mb-5"
+                           alt="{{ item.field_titre.value }}">
+
+                      <h5 class="card-title mb-1">{{ item.field_titre.value }}</h5>
+                      <p class="mb-2 text-white">{{ item.field_description.value }}</p>
+                      <small class="text-white">{{ item.field_sous_description.value }}</small>
+                      <br>
+                      {% if item.field_texte.value %}
+                        <button class="btn btn-plus-info mt-4" type="button" data-toggle="collapse"
+                                data-target="#port-{{ loop.index }}" aria-expanded="false"
+                                aria-controls="port-{{ loop.index }}">
+                          {{ "Plus d'info"|t }}
+                        </button>
+                      {% elseif item.field_lien_github.0.url %}
+                        <div>
+                          <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info mt-4" type="button">
+                            <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
+                          </a>
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="collapse" id="port-{{ loop.index }}">
+                      <div class="p-2 text-left mb-4">
+                        {{ item.field_texte.value|raw }}
+                      </div>
+                      {% if item.field_lien_github.0.url %}
+                        <div>
+                          <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
+                            <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
+                          </a>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            {% endfor %}
+
+            <ol class="carousel-indicators my-5">
+              {% for item in ports %}
+                <li data-target="#myCarousel" data-slide-to="{{ loop.index - 1 }}"
+                    {% if loop.first %}class="active"{% endif %}></li>
+              {% endfor %}
+            </ol>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <a id="button-to-top" href="#header"><i class="fas fa-angle-double-up fa-3x text-white"></i></a>
+
+    {{ content|without('field_photo_de_profil', 'field_nom', 'field_poste', 'field_ville', 'field_permis',
+      'field_social', 'field_cv_pdf', 'field_resume', 'field_experiences', 'field_competences', 'field_formations',
+      'field_portfolio') }}
+  </div>
+</article>

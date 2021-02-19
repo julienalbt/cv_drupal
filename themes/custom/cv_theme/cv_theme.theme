@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function cv_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+}
+
+function cv_theme_preprocess_node__cv__full(&$variables) {
+
+  //social
+  $socialElt = $variables['elements']['field_social']['#links'];
+  $socialLinks = [];
+  foreach ($socialElt as $link) {
+    $socialLinks[] = $link['url'];
+  }
+  $variables['mail_link'] = $socialLinks[0];
+  $variables['linkedin_link'] = $socialLinks[1];
+  $variables['github_link'] = $socialLinks[2];
+
+  //file
+  /** @var \Drupal\file\Entity\File $pdfFile */
+  $file = $variables['elements']['field_cv_pdf'][0]['#file'];
+  $variables['pdf_url'] = $file->createFileUrl();
+
+  //exp
+  $expField = $variables['elements']['field_experiences'];
+  $expsArray = [];
+  foreach ($expField as $value) {
+    if (is_array($value) && isset($value['#paragraph'])) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = $value['#paragraph'];
+      if ($paragraph->getType() === "experiences") {
+        $expsArray[] = $paragraph;
+      }
+      elseif ($paragraph->getType() === "titre") {
+        $variables['exps_title'] = $paragraph;
+      }
+    }
+  }
+  $variables['exps'] = $expsArray;
+
+  //comp
+  $compField = $variables['elements']['field_competences'];
+  $compsArray = [];
+  foreach ($compField as $value) {
+    if (is_array($value) && isset($value['#paragraph'])) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = $value['#paragraph'];
+      if ($paragraph->getType() === "texte") {
+        $compsArray[] = $paragraph;
+      }
+      elseif ($paragraph->getType() === "titre") {
+        $variables['comps_title'] = $paragraph;
+      }
+    }
+  }
+  $variables['comps'] = $compsArray;
+
+  //form
+  $formField = $variables['elements']['field_formations'];
+  $formsArray = [];
+  foreach ($formField as $value) {
+    if (is_array($value) && isset($value['#paragraph'])) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = $value['#paragraph'];
+      if ($paragraph->getType() === "formation") {
+        $formsArray[] = $paragraph;
+      }
+      elseif ($paragraph->getType() === "titre") {
+        $variables['forms_title'] = $paragraph;
+      }
+    }
+  }
+  $variables['forms'] = $formsArray;
+
+  //port
+  $portField = $variables['elements']['field_portfolio'];
+  $portsArray = [];
+  foreach ($portField as $value) {
+    if (is_array($value) && isset($value['#paragraph'])) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = $value['#paragraph'];
+      if ($paragraph->getType() === "portfolio") {
+        $portsArray[] = $paragraph;
+      }
+      elseif ($paragraph->getType() === "titre") {
+        $variables['ports_title'] = $paragraph;
+      }
+    }
+  }
+  $variables['ports'] = $portsArray;
+}

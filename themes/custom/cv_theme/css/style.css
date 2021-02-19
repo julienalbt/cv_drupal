@@ -1,0 +1,195 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+footer {
+  display: none;
+}
+
+.navbar {
+  position: fixed !important;
+  right: 0 !important;
+  left: 0 !important;
+  z-index: 2 !important;
+}
+
+/* Infos */
+p.display-5 {
+  font-size: xx-large;
+}
+
+.social-link-field {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-link-field i {
+  font-size: xx-large;
+}
+
+.field--name-field-cv-pdf a {
+  text-decoration: none;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.field--name-field-cv-pdf a:hover {
+  background-color: #ef5d1a;
+  border-color: #ef5d1a;
+  color: #fff;
+}
+
+.btn-social {
+  color: white;
+  transition: .5s ease-out;
+}
+
+.btn-social:hover {
+  color: #ef5d1a;
+}
+
+.btn-pdf a {
+  text-decoration: none;
+  border: 1px solid #ef5d1a;
+  color: #fff;
+  transition: .5s ease-out;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-pdf a:hover {
+  color: #fff;
+  box-shadow: inset #ef5d1a 0 110px 1px 0;
+}
+
+.ico {
+  color: #ef5d1a;
+}
+
+.field--name-field-photo-de-profil img {
+  border-radius: 150px;
+}
+
+.field--name-field-titre {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Resume */
+section#resume a {
+  color: #ef5d1a;
+}
+
+/* Exp */
+section#exp .bg-card {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+section#exp .card-body ul {
+  text-align: left;
+}
+
+section#exp li a {
+  color: #ef5d1a;
+}
+
+.btn-plus-info, .btn-certif {
+  border-radius: .3rem;
+  border: 1px solid #ef5d1a;
+  color: #fff;
+  transition: .5s ease-out;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-plus-info:hover,  .btn-certif:hover{
+  color: #fff;
+  box-shadow: inset #ef5d1a 0 40px 1px 0;
+}
+
+/* Comp */
+section#comp .bg-card {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+section#comp h5 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Form */
+section#form .bg-card {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Port */
+.carousel-caption {
+  position: relative;
+  bottom: 3rem;
+  z-index: 10;
+  left: 0;
+  right: 0;
+}
+
+.carousel-inner .container {
+  margin-left: unset;
+  max-width: 750px;
+  margin: auto;
+}
+
+.carousel-inner .card-body {
+  padding: 0;
+}
+
+.carousel-indicators li {
+  height: 20px;
+  width: 100px;
+  transition: 1.5s ease-out;
+}
+
+.carousel-indicators li.active {
+  background-color: #ef5d1a;
+}
+
+.carousel-indicators li:hover {
+  box-shadow: inset #ef5d1a 0 110px 1px 0;
+}
+
+/* Button to top */
+
+#button-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #EF5D1A;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+  opacity .5s, visibility .5s, .5s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.fa-angle-double-up {
+  line-height: 50px!important;
+}
+#button-to-top:hover {
+  height: 70px;
+  cursor: pointer;
+  box-shadow: inset #ef5d1a 0 70px 1px 0;
+}
+#button-to-top:active {
+  background-color: #EF5D1A;
+}
+#button-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
