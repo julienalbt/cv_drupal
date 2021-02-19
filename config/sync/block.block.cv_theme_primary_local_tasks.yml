@@ -1,0 +1,22 @@
+uuid: 3712f424-e23a-4c75-8f2b-76c4f3f9a784
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cv_theme
+_core:
+  default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
+id: cv_theme_primary_local_tasks
+theme: cv_theme
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

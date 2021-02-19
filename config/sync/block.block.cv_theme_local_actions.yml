@@ -1,0 +1,20 @@
+uuid: d947433e-d6e3-4e1b-a11a-c944b99495d5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cv_theme
+_core:
+  default_config_hash: ik4PTMlBD0MWansnSMpSXq5SUlWRJ1IVVt6C7AIbQmc
+id: cv_theme_local_actions
+theme: cv_theme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
