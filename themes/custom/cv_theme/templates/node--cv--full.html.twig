@@ -147,11 +147,11 @@
                 <br>
                 <button class="btn-plus-info btn mt-4" type="button" data-toggle="collapse"
                         data-target="#{{ item.field_agence.value|replace({' ': '-'}) }}" aria-expanded="false"
-                        aria-controls="{{ item.field_agence.value|replace({' ': '-'}) }} }}">
+                        aria-controls="{{ item.field_agence.value|replace({' ': '-'}) }}">
                   Plus d'info
                 </button>
               </div>
-              <div class="collapse" id="{{ item.field_agence.value|replace({' ': '-'}) }} }}">
+              <div class="collapse" id="{{ item.field_agence.value|replace({' ': '-'}) }}">
                 <div class="card-body">
                   {{ item.field_liste_de_taches.value|raw }}
                 </div>
