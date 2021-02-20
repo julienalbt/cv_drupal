@@ -109,12 +109,12 @@
             <a class="btn-social mx-2" href="{{ github_link }}"><i class="fab fa-github fa-2x"></i></a>
           </div>
           {% if pdf_url %}
-          <div class="btn-pdf">
-            <a class="d-flex flex-column align-items-center btn btn-lg" href="{{ pdf_url }}">
-              <i class="fas fa-file-pdf fa-3x"></i>
-              {{ 'Télécharger le CV'|t }}
-            </a>
-          </div>
+            <div class="btn-pdf">
+              <a class="d-flex flex-column align-items-center btn btn-lg" href="{{ pdf_url }}">
+                <i class="fas fa-file-pdf fa-3x"></i>
+                {{ 'Télécharger le CV'|t }}
+              </a>
+            </div>
           {% endif %}
 
         </div>
@@ -260,8 +260,8 @@
                           {{ "Plus d'info"|t }}
                         </button>
                       {% elseif item.field_lien_github.0.url %}
-                        <div>
-                          <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info mt-4" type="button">
+                        <div class="my-5">
+                          <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
                             <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
                           </a>
                         </div>
@@ -272,7 +272,7 @@
                         {{ item.field_texte.value|raw }}
                       </div>
                       {% if item.field_lien_github.0.url %}
-                        <div>
+                        <div class="my-5">
                           <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
                             <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
                           </a>
@@ -284,13 +284,14 @@
               </div>
 
             {% endfor %}
-
-            <ol class="carousel-indicators my-5">
-              {% for item in ports %}
-                <li data-target="#myCarousel" data-slide-to="{{ loop.index - 1 }}"
-                    {% if loop.first %}class="active"{% endif %}></li>
-              {% endfor %}
-            </ol>
+            <div class="my-5">
+              <ol class="carousel-indicators my-5">
+                {% for item in ports %}
+                  <li data-target="#myCarousel" data-slide-to="{{ loop.index - 1 }}"
+                      {% if loop.first %}class="active"{% endif %}></li>
+                {% endfor %}
+              </ol>
+            </div>
 
           </div>
 
