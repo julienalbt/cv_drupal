@@ -16,7 +16,16 @@ footer {
 
 /* Infos */
 p.display-5 {
-  font-size: xx-large;
+  font-size: x-large;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+}
+
+.field-poste {
+  font-size: 1.6rem !important;
 }
 
 .social-link-field {

@@ -94,10 +94,10 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     <section id="header" class="py-5 text-center container">
       <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
+        <div class="col-lg-6 col-md-8 mx-auto profile-pic">
           {{ content.field_photo_de_profil }}
           <p class="lead display-5">{{ content.field_nom.0 }}</p>
-          <h2 class="fw-light my-3">{{ content.field_poste.0 }}</h2>
+          <h2 class="fw-light my-3 field-poste">{{ content.field_poste.0 }}</h2>
           <p class="lead">
             <i class="fas fa-map-marker-alt mr-1 ico"></i>{{ content.field_ville.0 }}
             <br>
