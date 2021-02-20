@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.cv.field_resume
     - field.field.node.cv.field_social
     - field.field.node.cv.field_ville
-    - image.style.medium
     - node.type.cv
   module:
     - entity_reference_revisions
@@ -84,7 +83,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: medium
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     region: content
