@@ -1,7 +1,7 @@
 /* ---------- Color Module Styles ----------- */
 
 body {
-  background: linear-gradient(to left bottom,#1b1642, #6E2AA5, #9465bb) no-repeat center !important;
+  background: linear-gradient(to left bottom, #1b1642, #6e2aa5, #9465bb) no-repeat center !important;
   background-size: cover;
   color: white;
 }
