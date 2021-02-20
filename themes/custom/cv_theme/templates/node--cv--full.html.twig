@@ -108,12 +108,14 @@
             <a class="btn-social mx-2" href="{{ linkedin_link }}"><i class="fab fa-linkedin-in fa-2x"></i></a>
             <a class="btn-social mx-2" href="{{ github_link }}"><i class="fab fa-github fa-2x"></i></a>
           </div>
+          {% if pdf_url %}
           <div class="btn-pdf">
             <a class="d-flex flex-column align-items-center btn btn-lg" href="{{ pdf_url }}">
               <i class="fas fa-file-pdf fa-3x"></i>
               {{ 'Télécharger le CV'|t }}
             </a>
           </div>
+          {% endif %}
 
         </div>
       </div>
@@ -144,12 +146,12 @@
                 <small class="text-white">{{ item.field_agence.value }} - {{ item.field_lieu.value }}</small>
                 <br>
                 <button class="btn-plus-info btn mt-4" type="button" data-toggle="collapse"
-                        data-target="#{{ item.field_agence.value }}" aria-expanded="false"
-                        aria-controls="{{ item.field_agence.value }}">
+                        data-target="#{{ item.field_agence.value|replace({' ': '-'}) }}" aria-expanded="false"
+                        aria-controls="{{ item.field_agence.value|replace({' ': '-'}) }} }}">
                   Plus d'info
                 </button>
               </div>
-              <div class="collapse" id="{{ item.field_agence.value }}">
+              <div class="collapse" id="{{ item.field_agence.value|replace({' ': '-'}) }} }}">
                 <div class="card-body">
                   {{ item.field_liste_de_taches.value|raw }}
                 </div>

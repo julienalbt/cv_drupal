@@ -47,8 +47,12 @@ function cv_theme_preprocess_node__cv__full(&$variables) {
 
   //file
   /** @var \Drupal\file\Entity\File $pdfFile */
-  $file = $variables['elements']['field_cv_pdf'][0]['#file'];
-  $variables['pdf_url'] = $file->createFileUrl();
+  if (!empty($variables['elements']['field_cv_pdf'][0])) {
+    $file = $variables['elements']['field_cv_pdf'][0]['#file'];
+  }
+  if (isset($file)) {
+    $variables['pdf_url'] = $file->createFileUrl();
+  }
 
   //exp
   $expField = $variables['elements']['field_experiences'];
