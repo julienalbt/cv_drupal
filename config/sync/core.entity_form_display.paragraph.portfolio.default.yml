@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.portfolio.field_description
+    - field.field.paragraph.portfolio.field_github_link
     - field.field.paragraph.portfolio.field_lien_github
     - field.field.paragraph.portfolio.field_screenshot
     - field.field.paragraph.portfolio.field_sous_description
@@ -25,6 +26,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_github_link:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_lien_github:
     weight: 5

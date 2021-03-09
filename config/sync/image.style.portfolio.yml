@@ -1,0 +1,15 @@
+uuid: 4e307cfd-f41c-43a4-8c42-fb98496c1eee
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio
+label: Portfolio
+effects:
+  f38c2de8-9dcc-4f76-bbe6-77f076715746:
+    uuid: f38c2de8-9dcc-4f76-bbe6-77f076715746
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 720
+      height: 390
+      anchor: center-top

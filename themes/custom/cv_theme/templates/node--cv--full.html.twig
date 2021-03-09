@@ -245,7 +245,7 @@
                 <div class="container">
                   <div class="carousel-caption text-center">
                     <div class="card-body my-5">
-                      <img src="{{ file_url(item.field_screenshot.entity.field_media_image.entity.fileuri) }}"
+                      <img src="{{ file_url(item.field_screenshot.entity.field_media_image.entity.fileuri|image_style('portfolio')) }}"
                            class="col-12 mb-5"
                            alt="{{ item.field_titre.value }}">
 
@@ -262,7 +262,7 @@
                       {% elseif item.field_lien_github.0.url %}
                         <div class="my-5">
                           <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
-                            <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
+                            {% if item.field_github_link.value %}<i class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
                           </a>
                         </div>
                       {% endif %}
@@ -274,7 +274,7 @@
                       {% if item.field_lien_github.0.url %}
                         <div class="my-5">
                           <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
-                            <i class="fab fa-github mr-2"></i>{{ item.field_lien_github.0.title }}
+                            {% if item.field_github_link.value %}<i class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
                           </a>
                         </div>
                       {% endif %}
