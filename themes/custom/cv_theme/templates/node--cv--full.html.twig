@@ -245,9 +245,10 @@
                 <div class="container">
                   <div class="carousel-caption text-center">
                     <div class="card-body my-5">
-                      <img src="{{ file_url(item.field_screenshot.entity.field_media_image.entity.fileuri|image_style('portfolio')) }}"
-                           class="col-12 mb-5"
-                           alt="{{ item.field_titre.value }}">
+                      <img
+                        src="{{ file_url(item.field_screenshot.entity.field_media_image.entity.fileuri|image_style('portfolio')) }}"
+                        class="col-12 mb-5"
+                        alt="{{ item.field_titre.value }}">
 
                       <h5 class="card-title mb-1">{{ item.field_titre.value }}</h5>
                       <p class="mb-2 text-white">{{ item.field_description.value }}</p>
@@ -260,11 +261,10 @@
                           {{ "Plus d'info"|t }}
                         </button>
                       {% elseif item.field_lien_github.0.url %}
-                        <div class="my-5">
-                          <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
-                            {% if item.field_github_link.value %}<i class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
-                          </a>
-                        </div>
+                        <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info mt-4" type="button">
+                          {% if item.field_github_link.value %}<i
+                            class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
+                        </a>
                       {% endif %}
                     </div>
                     <div class="collapse" id="port-{{ loop.index }}">
@@ -274,7 +274,8 @@
                       {% if item.field_lien_github.0.url %}
                         <div class="my-5">
                           <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info" type="button">
-                            {% if item.field_github_link.value %}<i class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
+                            {% if item.field_github_link.value %}<i
+                              class="fab fa-github mr-2"></i>{% endif %}{{ item.field_lien_github.0.title }}
                           </a>
                         </div>
                       {% endif %}
