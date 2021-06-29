@@ -1,0 +1,22 @@
+uuid: ccbcdd6f-e167-4c8f-aabe-8ec8efa02e04
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.experiences
+id: paragraph.experiences.status
+field_name: status
+entity_type: paragraph
+bundle: experiences
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

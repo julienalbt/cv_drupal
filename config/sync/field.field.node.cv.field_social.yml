@@ -14,7 +14,7 @@ bundle: cv
 label: Social
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     link: alombertjulien@gmail.com

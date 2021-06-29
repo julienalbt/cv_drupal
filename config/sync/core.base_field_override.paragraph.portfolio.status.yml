@@ -1,0 +1,22 @@
+uuid: 080fa797-8d90-44c0-9564-60205be97796
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.portfolio
+id: paragraph.portfolio.status
+field_name: status
+entity_type: paragraph
+bundle: portfolio
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

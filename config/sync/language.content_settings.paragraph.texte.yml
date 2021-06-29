@@ -1,0 +1,18 @@
+uuid: fbbd3b8e-91ff-4095-8404-392c5ce3eb8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.texte
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.texte
+target_entity_type_id: paragraph
+target_bundle: texte
+default_langcode: site_default
+language_alterable: true

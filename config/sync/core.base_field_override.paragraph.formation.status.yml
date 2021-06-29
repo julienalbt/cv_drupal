@@ -1,0 +1,22 @@
+uuid: f24a567b-5524-44df-9ff3-b83b2d1bc65c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.formation
+id: paragraph.formation.status
+field_name: status
+entity_type: paragraph
+bundle: formation
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
