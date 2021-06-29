@@ -5,7 +5,6 @@
 /modules/contrib/
 /themes/contrib/
 /profiles/contrib/
-/libraries/
 
 # Ignore sensitive information
 /sites/*/settings.php
