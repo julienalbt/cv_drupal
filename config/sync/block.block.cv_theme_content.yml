@@ -11,7 +11,7 @@ _core:
 id: cv_theme_content
 theme: cv_theme
 region: content
-weight: 1
+weight: 0
 provider: null
 plugin: system_main_block
 settings:
