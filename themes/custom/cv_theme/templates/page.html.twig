@@ -84,7 +84,7 @@
     {% if container_navbar %}
     <div class="container">
       {% endif %}
-      {{ page.header }}
+
       {% if page.primary_menu or page.header_form %}
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false"
@@ -106,6 +106,7 @@
       {% if container_navbar %}
     </div>
     {% endif %}
+    {{ page.header }}
   </nav>
 {% endblock %}
 

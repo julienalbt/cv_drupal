@@ -1,0 +1,21 @@
+uuid: 5b483e48-ee9f-455c-b787-ab02171ddfb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - cv_theme
+id: dropdownlanguage
+theme: cv_theme
+region: header
+weight: -2
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  provider: dropdown_language
+  label_display: '0'
+  labels: null
+visibility: {  }

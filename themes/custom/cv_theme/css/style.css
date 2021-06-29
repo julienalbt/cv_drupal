@@ -8,18 +8,9 @@ footer {
 }
 
 /* Language switcher */
-.js-form-item-lang-dropdown-select {
-  margin-bottom: 0;
+.navbar.navbar-expand-lg {
+  flex-wrap: nowrap !important;
 }
-
-.chosen-single:hover {
-  color: black !important;
-}
-
-.block-menu.navigation.menu--main {
-  margin-right: 50px;
-}
-
 
 /* Infos */
 p.display-5 {
