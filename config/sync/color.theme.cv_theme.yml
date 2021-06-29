@@ -10,9 +10,9 @@ palette:
   titleslogan: '#ffffff'
   text: '#3b3b3b'
   link: '#0073b6'
-logo: 'public://color/cv_theme-918a9609/logo.svg'
+logo: 'public://color/cv_theme-3bdb88e7/logo.svg'
 stylesheets:
-  - 'public://color/cv_theme-918a9609/colors.css'
+  - 'public://color/cv_theme-3bdb88e7/colors.css'
 files:
-  - 'public://color/cv_theme-918a9609/logo.svg'
-  - 'public://color/cv_theme-918a9609/colors.css'
+  - 'public://color/cv_theme-3bdb88e7/logo.svg'
+  - 'public://color/cv_theme-3bdb88e7/colors.css'

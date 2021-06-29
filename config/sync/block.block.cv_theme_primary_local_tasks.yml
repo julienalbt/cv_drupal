@@ -9,7 +9,7 @@ _core:
 id: cv_theme_primary_local_tasks
 theme: cv_theme
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:
