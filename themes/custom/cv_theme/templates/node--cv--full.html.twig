@@ -112,7 +112,7 @@
             <div class="btn-pdf">
               <a class="d-flex flex-column align-items-center btn btn-lg" href="{{ pdf_url }}">
                 <i class="fas fa-file-pdf fa-3x"></i>
-                {{ 'Télécharger le CV'|t }}
+                {{ 'Download CV'|t }}
               </a>
             </div>
           {% endif %}
@@ -160,12 +160,12 @@
                     {% if item.field_certificat_de_travail.entity.uri.value %}
                       <a class="btn btn-certif my-2"
                          href="{{ file_url(item.field_certificat_de_travail.entity.uri.value) }}">
-                        {{ 'Certificat de travail'|t }}
+                        {{ 'Work certificate'|t }}
                       </a>
                     {% endif %}
                     {% if item.field_recommandation.entity.uri.value %}
                       <a class="btn btn-certif my-2" href="{{ file_url(item.field_recommandation.entity.uri.value) }}">
-                        {{ 'Lettre de recommandation'|t }}
+                        {{ 'Letter of recommendation'|t }}
                       </a>
                     {% endif %}
                   </div>
@@ -258,7 +258,7 @@
                         <button class="btn btn-plus-info mt-4" type="button" data-toggle="collapse"
                                 data-target="#port-{{ loop.index }}" aria-expanded="false"
                                 aria-controls="port-{{ loop.index }}">
-                          {{ "Plus d'info"|t }}
+                          {{ "More info"|t }}
                         </button>
                       {% elseif item.field_lien_github.0.url %}
                         <a href="{{ item.field_lien_github.0.url }}" class="btn btn-plus-info mt-4" type="button">
