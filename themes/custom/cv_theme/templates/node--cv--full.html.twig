@@ -148,7 +148,7 @@
                 <button class="btn-plus-info btn mt-4" type="button" data-toggle="collapse"
                         data-target="#{{ item.field_agence.value|replace({' ': '-'}) }}" aria-expanded="false"
                         aria-controls="{{ item.field_agence.value|replace({' ': '-'}) }}">
-                  Plus d'info
+                  {{ "More info"|t }}
                 </button>
               </div>
               <div class="collapse" id="{{ item.field_agence.value|replace({' ': '-'}) }}">
@@ -165,7 +165,7 @@
                     {% endif %}
                     {% if item.field_recommandation.entity.uri.value %}
                       <a class="btn btn-certif my-2" href="{{ file_url(item.field_recommandation.entity.uri.value) }}">
-                        {{ 'Letter of recommendation'|t }}
+                        {{ 'Recommendation letter'|t }}
                       </a>
                     {% endif %}
                   </div>
