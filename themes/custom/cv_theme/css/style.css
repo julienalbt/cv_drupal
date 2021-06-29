@@ -12,6 +12,10 @@ footer {
   flex-wrap: nowrap !important;
 }
 
+img.language-icon {
+  vertical-align: baseline;
+}
+
 /* Infos */
 p.display-5 {
   font-size: x-large;
