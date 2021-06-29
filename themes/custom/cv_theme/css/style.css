@@ -12,9 +12,14 @@ footer {
   margin-bottom: 0;
 }
 
+.chosen-single:hover {
+  color: black !important;
+}
+
 .block-menu.navigation.menu--main {
   margin-right: 50px;
 }
+
 
 /* Infos */
 p.display-5 {
